@@ -16,6 +16,7 @@ export default class InputText extends Component {
             <View style={styles.inputStyle}>
                 <Text>{title}</Text>
                 <TextInput
+                    /* Aşağıdaki atama bu sınıfa gelen tüm propları textinput için de ekler*/
                     {...this.props}
                     style={styles.textInputStyle} placeholderTextColor='black'/>
             </View>
