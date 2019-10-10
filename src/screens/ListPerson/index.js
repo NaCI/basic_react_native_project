@@ -9,7 +9,6 @@ import {strings} from '../../../res/strings';
 
 class ListPersonScreen extends Component {
 
-
     handlerLongClick = (item, index) => {
         console.log('Long Press on Item : ' + item.name + ' - ' + item.age + '\nItem Index : ' + index);
         this.showDeleteAlertDialog(item, index);
@@ -66,7 +65,6 @@ class ListPersonScreen extends Component {
                 >
                     <Text>{strings.add_new_user}</Text>
                 </TouchableOpacity>
-                {/*TODO : Tüm hardcoded stringleri ayrı bir componente taşı*/}
                 <Text>{strings.user_list}</Text>
                 <FlatList
                     //keyExtractor={item => item.key}
