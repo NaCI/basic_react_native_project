@@ -22,11 +22,14 @@ const styles = StyleSheet.create(
             fontSize: 18,
             height: 44,
         },
-        horizontallyCentered: {
-            flexDirection: 'row',
-            alignItems: 'center',
+        buttonStyle: {
+            borderWidth: 2,
+            backgroundColor: 'purple',
             justifyContent: 'center',
-            margin: 10
+            alignItems: 'center',
+            borderRadius: 5,
+            alignSelf: 'center',
+            padding: 5
         }
     }
 );

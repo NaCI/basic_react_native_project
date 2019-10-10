@@ -11,4 +11,9 @@ export const strings = {
     inputtext_age: 'Yaş',
     inputtext_age_placeholder: 'Yaşınızı Giriniz',
     continue: 'Devam',
+    listPersonScreen_title: 'Kullanıcı Detay',
+    addEditPersonScreen_title: 'Kullanıcı Ekle',
+    calendarScreen_title: 'Takvim',
+    go_to_calendar: 'Takvimi Aç',
+
 };

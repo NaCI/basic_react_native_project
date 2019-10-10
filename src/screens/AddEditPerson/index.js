@@ -8,6 +8,15 @@ import {strings} from '../../../res/strings';
 
 class AddEditPerson extends Component {
 
+    // Custom header title view set edilir
+    static navigationOptions = {
+        headerTitle: (
+            <View style={{backgroundColor: 'red'}}>
+                <Text>{strings.addEditPersonScreen_title}</Text>
+            </View>
+        )
+    };
+
     //State'te veri tanımı yapmak için constructor kullanılır
     constructor(props) {
         super(props);

@@ -12,12 +12,14 @@ import HomeScreen from './src/screens/Home'
 import ProfileScreen from './src/screens/Profile'
 import ListPersonScreen from './src/screens/ListPerson'
 import AddEditPersonScreen from './src/screens/AddEditPerson'
+import CalendarScreen from "./src/screens/Calendar";
 
 const MainNavigator = createStackNavigator({
     Profile: {screen: ProfileScreen},
     Home: {screen: HomeScreen},
     ListPerson: {screen: ListPersonScreen},
-    AddEditPerson: {screen: AddEditPersonScreen}
+    AddEditPerson: {screen: AddEditPersonScreen},
+    Calendar: {screen: CalendarScreen}
 
 }, {initialRouteName: 'ListPerson'});
 

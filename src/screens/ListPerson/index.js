@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Alert, View, FlatList, TouchableOpacity, Text} from 'react-native';
+import {Alert, FlatList, Text, TouchableOpacity, View} from 'react-native';
 import PersonListItem from "../../components/ListItems/PersonListItem";
 import styles from './style';
 import {connect} from 'react-redux';
@@ -9,6 +9,10 @@ import {strings} from '../../../res/strings';
 
 class ListPersonScreen extends Component {
 
+    static navigationOptions = {
+        title: strings.listPersonScreen_title,
+    };
+
     handlerLongClick = (item, index) => {
         console.log('Long Press on Item : ' + item.name + ' - ' + item.age + '\nItem Index : ' + index);
         this.showDeleteAlertDialog(item, index);
@@ -16,6 +20,10 @@ class ListPersonScreen extends Component {
 
     handlerClick = (item) => {
         //console.log('Press on Item : ' + item);
+    };
+
+    calendarButtonClicked = () => {
+        this.props.navigation.navigate('Calendar');
     };
 
     addButtonClicked = () => {
@@ -51,20 +59,37 @@ class ListPersonScreen extends Component {
         const {users} = this.props;
         return (
             <View style={styles.container}>
-                <TouchableOpacity
-                    style={{
-                        borderWidth: 2,
-                        backgroundColor: 'purple',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        borderRadius: 5,
-                        alignSelf: 'center',
-                        padding: 5
-                    }}
-                    onPress={this.addButtonClicked}
-                >
-                    <Text>{strings.add_new_user}</Text>
-                </TouchableOpacity>
+                <View style={styles.horizontallyCentered}>
+                    <TouchableOpacity
+                        style={{
+                            borderWidth: 2,
+                            backgroundColor: 'purple',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            borderRadius: 5,
+                            alignSelf: 'center',
+                            marginRight: 5,
+                            padding: 5
+                        }}
+                        onPress={this.addButtonClicked}
+                    >
+                        <Text>{strings.add_new_user}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={{
+                            borderWidth: 2,
+                            backgroundColor: 'purple',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            borderRadius: 5,
+                            alignSelf: 'center',
+                            padding: 5
+                        }}
+                        onPress={this.calendarButtonClicked}
+                    >
+                        <Text>{strings.go_to_calendar}</Text>
+                    </TouchableOpacity>
+                </View>
                 <Text>{strings.user_list}</Text>
                 <FlatList
                     //keyExtractor={item => item.key}
